@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<title>Register</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<body>
+<div class="w3-container">
+  <div class="w3-bar w3-border w3-light-grey">
+    <a href="/" class="w3-bar-item w3-button w3-hover-blue">Home</a>
+    <a href="/register" class="w3-bar-item w3-button w3-hover-blue">Register</a>
+    <a href="/login" class="w3-bar-item w3-button w3-hover-blue">Login</a>
+  </div>
+  <form class="w3-container w3-card-4" action="registerAction" method="POST">
+    {{if (.Error) "true"}}
+      <div class="w3-panel w3-pale-red">
+        <p>{{ .Message }}</p>
+      </div>
+    {{else if (.Success) "true"}}
+      <div class="w3-panel w3-pale-green">
+        <p>{{ .Message }}</p>
+      </div>
+    {{end}}
+
+    <h2 class="w3-text-blue">Register Form</h2>
+    <p>
+      <label class="w3-text">
+        <b>Full Name</b>
+      </label>
+      <input class="w3-input w3-border" name="fullname" type="text" required>
+    </p>
+    <p>
+      <label class="w3-text">
+        <b>Email</b>
+      </label>
+      <input class="w3-input w3-border" name="email" type="email" required>
+    </p>
+    <p>
+      <label class="w3-text">
+        <b>Password</b>
+      </label>
+      <input class="w3-input w3-border" type="password" name="password" required>
+    </p>
+    <p>      
+      <button class="w3-btn w3-blue">Register</button>
+    </p>
+</form>
+</body>
+</html>

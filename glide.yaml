@@ -1,0 +1,4 @@
+package: golangauth
+import:
+- package: github.com/satori/go.uuid
+- package: gopkg.in/mgo.v2

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<title>Golang Auth</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<body>
+	{{if eq (.isLoggedIn) "false" }}
+	 	<div class="w3-container">
+			<div class="w3-bar w3-border w3-light-grey">
+  				<a href="/" class="w3-bar-item w3-button w3-hover-blue">Home</a>
+  				<a href="/register" class="w3-bar-item w3-button w3-hover-blue">Register</a>
+  				<a href="/login" class="w3-bar-item w3-button w3-hover-blue">Login</a>
+			</div>
+			<p><strong>Selamat Datang</strong></p>
+			
+			<p>Status : <strong>Belum Login</strong></p>
+		</div>
+	{{else if eq (.isLoggedIn) "true" }}
+		<div class="w3-container">
+			<div class="w3-bar w3-border w3-light-grey">
+  				<a href="/" class="w3-bar-item w3-button w3-hover-blue">Home</a>
+  				<a href="/logout" class="w3-bar-item w3-button w3-hover-blue">Logout</a>
+			</div>
+			<p><strong>Selamat Datang</strong></p>
+			
+			<p>Status : <strong>Sudah Login</strong></p>
+		</div>
+	{{end}}
+</body>
+</html>
